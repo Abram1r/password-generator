@@ -21,49 +21,54 @@ if (!lowercase && !uppercase && !numeric && !specialCharacters) {
   alert("You must include at least one character type.");
 } // if 3 options are selected
 else if (lowercase && uppercase && numeric && specialCharacters) {
-  lower.concat(upper, num, spec);
+  options = lower.concat(upper, num, spec);
 }
 else if (lowercase && uppercase && numeric) {
-  lower.concat(upper, num);
+  options = lower.concat(upper, num);
 }
 else if (lowercase && uppercase && specialCharacters) {
-  lower.concat(upper, spec);
+  options = lower.concat(upper, spec);
 }
 else if (lowercase && numeric && specialCharacters) {
-  lower.concat(num, spec);
+  options = lower.concat(num, spec);
 }
 else if (uppercase && numeric && specialCharacters) {
-  upper.concat(num, spec)
+  options = upper.concat(num, spec)
 } // if 2 options are selected
 else if (lowercase && uppercase) {
-  lower.concat(upper);
+  options = lower.concat(upper);
 }
 else if (lowercase && numeric) {
-  lower.concat(num);
+  options = lower.concat(num);
 }
 else if (lowercase && specialCharacters) {
-  lower.concat(spec);
+  options = lower.concat(spec);
 }
 else if (uppercase && numeric) {
-  upper.concat(num);
+  options = upper.concat(num);
 }
 else if (uppercase && specialCharacters) {
-  upper.concat(spec);
+  options = upper.concat(spec);
 }
 else if (numeric && specialCharacters) {
-  num.concat(spec);
+  options = num.concat(spec);
 } // if one option
 else if (lowercase) {
-  lower;
+  options = lower;
 }
 else if (uppercase) {
-  upper;
+  options = upper;
 }
 else if (numeric) {
-  num;
+  options = num;
 }
 else if (specialCharacters) {
-  spec;
+  options = spec;
+};
+// randomization
+for (var i = 0; i < characterLength; i++) {
+  var includedOptions = options[Math.floor(Math.random() * options.length)];
+  password.push(includedOptions);
 }
 
 
